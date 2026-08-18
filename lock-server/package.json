@@ -1,0 +1,15 @@
+{
+  "name": "zendesk-app-lock-server",
+  "version": "1.0.0",
+  "description": "Servidor de lock distribuído para coordenar execuções do app background de reatribuição da Zendesk",
+  "main": "lock-server.js",
+  "scripts": {
+    "start": "node lock-server.js"
+  },
+  "dependencies": {
+    "express": "^4.19.2"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
