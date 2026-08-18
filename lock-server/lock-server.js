@@ -1,5 +1,19 @@
 const express = require('express');
+const cors = require('cors');
 const app = express();
+
+// Libera CORS para as origens da Zendesk (produção) e do ambiente de
+// testes local do ZAT (localhost:4567). Ajuste/adicione origens conforme
+// necessário.
+app.use(cors({
+    origin: [
+        /\.zendesk\.com$/,
+        /\.zdusercontent\.com$/,
+        'http://localhost:4567'
+    ],
+    methods: ['POST', 'GET', 'OPTIONS'],
+    allowedHeaders: ['Content-Type', 'x-lock-secret']
+}));
 
 app.use(express.json());
 
